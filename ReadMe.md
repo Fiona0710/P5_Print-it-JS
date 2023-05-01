@@ -1,4 +1,4 @@
-# Premiers pas sur le langage JavaScript
+# First steps on the JavaScript language
 
 Tools: HTML5, CSS3, Javascript
 
