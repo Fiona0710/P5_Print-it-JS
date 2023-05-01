@@ -20,11 +20,14 @@ const slides = [
 // Constants to select the different "id"
 const arrowLeft = document.getElementById("arrowLeft");
 const arrowRight = document.getElementById("arrowRight");
-const containerBanner = document.getElementById("banner");
 const imageBanner = document.getElementById("banner-img");
 const taglineBanner = document.getElementById("banner-tagline");
 const dots = document.getElementById("dots");
 
+// Event on click on the left arrow
+arrowLeft.addEventListener('click',SlidePrevious);
+// Event on click on the right arrow
+arrowRight.addEventListener('click',SlideNext); 
 
 // For loop to create as many "div" with a class "dot" as there are objects in the array
 for(let i = 0; i< slides.length; i++){ 
@@ -36,11 +39,6 @@ for(let i = 0; i< slides.length; i++){
 const allTheDots = document.querySelectorAll(".dot"); 
 // Added class dot_select on the first "dot"
 allTheDots[0].classList.add("dot_selected"); 
-
-// Event on click on the left arrow
-arrowLeft.addEventListener('click',SlidePrevious);
-// Event on click on the right arrow
-arrowRight.addEventListener('click',SlideNext); 
 
 // Initialization of the index variable to 0
 let index = 0; 
