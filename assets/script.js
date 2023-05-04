@@ -25,9 +25,9 @@ const taglineBanner = document.getElementById("banner-tagline");
 const dots = document.getElementById("dots");
 
 // Event on click on the left arrow
-arrowLeft.addEventListener('click',SlidePrevious);
+arrowLeft.addEventListener('click',slidePrevious);
 // Event on click on the right arrow
-arrowRight.addEventListener('click',SlideNext); 
+arrowRight.addEventListener('click',slideNext); 
 
 // For loop to create as many "div" with a class "dot" as there are objects in the array
 for(let i = 0; i< slides.length; i++){ 
@@ -44,13 +44,13 @@ allTheDots[0].classList.add("dot_selected");
 let index = 0; 
 
 // Function to add the image, the tagline and add the selected point according to the index
-function ContentBanner(){
+function changeBanner(){
 	imageBanner.src = "./assets/images/slideshow/" + slides[index].image;
 	taglineBanner.innerHTML = slides[index].tagLine;
 	allTheDots[index].classList.add("dot_selected");
 }
 // Function to delete the selected point
-function RemoveClass(){
+function removeClass(){
 	allTheDots[index].classList.remove("dot_selected");
 }
 
@@ -60,28 +60,28 @@ const lastSlide = slides.length-1;
 1) Call the RemoveClass function
 2) Condition if we are on the first image we display the last image, otherwise go back one image
 3) Calling the ContentBanner function */
-function SlidePrevious(){
-	RemoveClass();
+function slidePrevious(){
+	removeClass();
 	if(index === 0){
 		index = lastSlide;
 	}else{
 		index --;
 	};
-	ContentBanner();
+	changeBanner();
 }
 
 /* Fonction SlideNext:
 1) Idem
 2) Do the opposite, if you are on the last image, you display the first image, otherwise go forward one image 
 3) Idem */
-function SlideNext (){
-	RemoveClass();
+function slideNext (){
+	removeClass();
 	if (index === lastSlide){
 		index = 0;
 	}else{
 		index ++;
 	};	
-	ContentBanner();
+	changeBanner();
 }
 
 
